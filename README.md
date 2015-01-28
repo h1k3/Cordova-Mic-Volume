@@ -9,11 +9,7 @@ Phonegap plugin for reading ambient noise level through microphone.
 
 Supported platforms
 -------------------
-Android 
-
-
-Coming platforms
-----------------
+Android
 iOS
 
 
