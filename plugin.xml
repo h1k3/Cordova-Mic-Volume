@@ -12,6 +12,19 @@
     <js-module src="www/micVolume.js" name="MicVolume">
         <clobbers target="window.micVolume" />
     </js-module>
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="MicVolumePlugin">
+                <param name="ios-package" value="MicVolumePlugin"/>
+            </feature>
+        </config-file>
+
+        <header-file src="src/ios/MicVolumePlugin.h" />
+        <source-file src="src/ios/MicVolumePlugin.m" />
+
+        <framework src="AVFoundation.framework" />
+    </platform>
+
      <!-- android -->
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
