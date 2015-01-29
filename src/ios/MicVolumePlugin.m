@@ -84,14 +84,15 @@
     
     result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsDictionary:[NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithFloat:level],@"volume", nil]];
     [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
-
-    
 }
 
 
 
 - (void)stop:(CDVInvokedUrlCommand*)command
 {
+    AVAudioSession *audioSession = [AVAudioSession sharedInstance];
+    [audioSession setCategory:AVAudioSessionCategorySoloAmbient error:nil];
+    
     if (self.recorder) {
       [self.recorder stop];
     }
