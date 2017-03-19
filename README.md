@@ -17,15 +17,15 @@ iOS
 Using
 -----
 Add to your build flow :
-  cordova plugin add https://github.com/shukriadams/micVolume.git
+  cordova plugin add https://github.com/h1k3/micVolume.git
 
 
-    audioPoll.start(succesCallback, errorCallback);
+    micVolume.start(succesCallback, errorCallback);
 
-    audioPoll.read(function(reading){
+   micVolume.read(function(reading){
         console.log(reading.volume);
     }, errorCallback);
 
-    audioPoll.stop(succesCallback, errorCallback);
+    micVolume.stop(succesCallback, errorCallback);
 
 In all cases, errorCallback passes back either an error message string or object with an error message string in it.
